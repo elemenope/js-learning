@@ -14,7 +14,7 @@ The following list is enumerated for reference to the solutions:
 
 4. If you haven’t already, also write a recursive version of nth. */
 
-//https://jsbin.com/lalegizeya/edit?js,console,output
+//https://jsbin.com/yuxuparami/edit?js,console,output
 
 //SOLUTION 1
 
