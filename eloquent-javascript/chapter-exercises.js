@@ -5,48 +5,50 @@ If you haven’t already, also write a recursive version of nth. */
 //https://jsbin.com/lalegizeya/edit?js,console,output
 
 
-function arrayToList(){ 
-  let arr = [4, 5, 3]; 
+function arrayToList(arr){  
   let obj = null; 
-  for (i = arr.length-1; i >= 0; i--){ 
+  let i = arr.length;
+  while (i--){ 
   obj = { 
     list: arr[i], 
     rest: obj 
-    }; 
-  } 
-return console.log(obj); 
-} 
-arrayToList();
-
-var oak = { 
-  num: 1,
-    rest: {
-      num: 4,
-      rest: {
-        num: 5,
-          rest: {
-            num: 7,
-              rest: {
-                num: 9,
-                  rest: {
-                    num: 1
-                  }
-              }
-          }
-      }
-  }
-}
-
-
-function listToArray(){ 
-  let obj = oak.rest;
-  let arr = [];
-  arr.push(oak.num);
-  while (obj.hasOwnProperty('rest')){
-    obj = obj.rest;
-    arr.push(obj.num);
     }
-  return console.log(arr + " this is the array");
+  } 
+return (obj); 
+} 
+
+
+function listToArray(obj){ 
+  let objSearched = obj.rest;
+  let arr = [];
+  arr.push(obj.num);
+  while (objSearched.hasOwnProperty('rest')){
+    arr.push(objSearched.num);
+    objSearched = objSearched.rest;
+    }
+  arr.push(objSearched.num);
+  return (arr);
 }
 
-listToArray();
+
+function prepend(listOrArray,input){
+ 
+  let arr = [];
+  
+  if(Array.isArray(listOrArray)){
+    listOrArray.unshift(input);
+    return console.log(arrayToList(listOrArray));
+  }
+  
+  else if(listOrArray.toString() == "[object Object]"){
+    let arr = listToArray(listOrArray);
+    arr.unshift(input);
+    return console.log(arrayToList(arr));
+  }
+  
+  else {
+    console.log("Please submit an array or an object.")
+  }
+  
+  
+}
