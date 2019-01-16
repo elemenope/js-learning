@@ -32,16 +32,19 @@ return (obj);
 
 //SOLUTION 2
 
-function listToArray(obj){ 
-  let objSearched = obj.rest;
+function listToArray(obj, prop, link){ 
+  if (typeof obj !== "object"){
+    return console.log("Please enter a valid object.")
+  }
+  let objSearched = obj[link];
   let arr = [];
-  arr.push(obj.num);
-  while (objSearched.hasOwnProperty('rest')){
-    arr.push(objSearched.num);
-    objSearched = objSearched.rest;
+  arr.push(obj[prop]);
+  while (objSearched.hasOwnProperty(link)){
+    arr.push(objSearched[prop]);
+    objSearched = objSearched[link];
     }
-  arr.push(objSearched.num);
-  return (arr);
+  arr.push(objSearched[prop]);
+  return console.log(arr);
 }
 
 //SOLUTION 3
@@ -63,8 +66,8 @@ function prepend(listOrArray,input){
   
   else {
     console.log("Please submit an array or an object.")
-  }  
-  
+  }
+    
 }
 
 //SOLUTION 4
@@ -98,4 +101,15 @@ function nth(listOrArray, input){
   
 }
 
-//Note to self: I should probably make a function that validates function parameters before trying to run them and lets the user know they aren't gonna work!
+//Note to self: I should probably make a universal function that validates function parameter types before trying to run them and lets the user know they aren't gonna work!
+
+//Bonus: I found this baby helpful, it checks for the existence of a nested object within an object:
+
+function objHasNested(obj){
+  let key;
+  for (key in obj){
+    if (obj[key] == "[object Object]"){
+      console.log(key);
+    }
+  }
+}
