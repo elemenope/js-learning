@@ -14,7 +14,7 @@ The following list is enumerated for reference to the solutions:
 
 4. If you haven’t already, also write a recursive version of nth. */
 
-//https://jsbin.com/yuxuparami/edit?js,console,output
+//DEMO: https://jsbin.com/yuxuparami/edit?js,console,output
 
 //SOLUTION 1
 
@@ -152,6 +152,8 @@ function objHasNested(obj){
 //To find out whether values should be compared directly (use the === operator for that) or have their properties compared, you can use the typeof operator. If it produces "object" for both values, you should do a deep comparison. But you have to take one silly exception into account: because of a historical accident, typeof null also produces "object".
 
 //The Object.keys function will be useful when you need to go over the properties of objects to compare them.
+
+//DEMO: https://jsbin.com/jazikuj/edit?js,console
 
 function deepComparison(firstObject, secondObject){
   let i, j;
