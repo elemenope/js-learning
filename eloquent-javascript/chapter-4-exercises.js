@@ -32,7 +32,38 @@ return (obj);
 
 //SOLUTION 2
 
-function listToArray(obj, prop, link){ 
+function listToArray(obj){ 
+  let arr = [];
+  let i, objSearched;
+  if (typeof obj !== "object"){
+    return console.log("Please enter a valid object.");
+  }
+  for (i in obj){
+    if (obj[i] == "[object Object]"){
+    objSearched = obj[i];
+    let keyVal = Object.keys(objSearched);
+    let objVal = (keyVal[keyVal.length-1]);
+     arr.push(objVal);
+     while (objSearched.hasOwnProperty(objVal)){
+        arr.push(Object.keys(objSearched)[0]);
+        arr.push(Object.values(objSearched)[0]);
+        arr.push(objVal);
+        objSearched = objSearched[objVal];
+     }
+     arr.push(Object.keys(objSearched)[0]);
+      arr.push(Object.values(objSearched)[0]);
+    }
+    else {
+      arr.push(i);
+      arr.push(obj[i]);
+    }
+  }
+  return arr;
+}
+
+//BONUS: I made an additional function that turns it in to a list while looking for the property and list link.
+
+function listToArrayWithKey(obj, prop, link){ 
   if (typeof obj !== "object"){
     return console.log("Please enter a valid object.")
   }
@@ -111,5 +142,27 @@ function objHasNested(obj){
     if (obj[key] == "[object Object]"){
       console.log(key);
     }
+  }
+}
+
+//The == operator compares objects by identity. But sometimes you’d prefer to compare the values of their actual properties.
+
+//Write a function deepEqual that takes two values and returns true only if they are the same value or are objects with the same properties, where the values of the properties are equal when compared with a recursive call to deepEqual.
+
+//To find out whether values should be compared directly (use the === operator for that) or have their properties compared, you can use the typeof operator. If it produces "object" for both values, you should do a deep comparison. But you have to take one silly exception into account: because of a historical accident, typeof null also produces "object".
+
+//The Object.keys function will be useful when you need to go over the properties of objects to compare them.
+
+function deepComparison(firstObject, secondObject){
+  let i, j;
+  firstObject = listToArray(firstObject).toString();
+  secondObject = listToArray(secondObject).toString();
+  console.log(firstObject);
+  console.log(secondObject);
+  if (firstObject == secondObject){
+    return console.log("they're equal")
+  }
+  else {
+    return console.log("they're not equal")
   }
 }
