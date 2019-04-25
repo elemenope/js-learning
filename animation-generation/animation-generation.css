@@ -1,0 +1,147 @@
+body {
+background-color: #fff;
+background-size: 100% 1.2em;
+background-image: -webkit-linear-gradient(0deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+                  -webkit-linear-gradient(#eee .05em, transparent .05em);
+background-image: -moz-linear-gradient(0deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+                  -moz-linear-gradient(#eee .05em, transparent .05em);
+background-image: -ms-linear-gradient(0deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+                  -ms-linear-gradient(#eee .05em, transparent .05em);
+background-image: -o-linear-gradient(0deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+                  -o-linear-gradient(#eee .05em, transparent .05em);
+background-image: linear-gradient(0deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+                  linear-gradient(#eee .05em, transparent .05em);
+-pie-background: linear-gradient(0deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px) 0 0 / 100% 1.2em,
+                 linear-gradient(#eee .05em, transparent .05em) 0 0 / 100% 1.2em #fff;
+
+}
+
+.material-icons-new {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.icon-white {
+    webkit-filter: contrast(4) invert(1);
+    -moz-filter: contrast(4) invert(1);
+    -o-filter: contrast(4) invert(1);
+    -ms-filter: contrast(4) invert(1);
+    filter: contrast(4) invert(1);
+}
+
+.random-red-ball {
+    cursor: pointer;
+    height: 3em;
+    width: 3em;
+    border: 1px solid rgba(71,27,27,1);
+    border-radius: 100%;
+    background-color: red;
+    box-shadow: inset 0.4em 0.1em 0.8em 0.4em rgba(71,27,27,1);
+    -webkit-box-shadow: inset 0.4em 0.1em 0.8em 0.4em rgba(71,27,27,1);
+    -moz-box-shadow: inset 0.4em 0.1em 0.8em 0.4em rgba(71,27,27,1);
+    position: absolute;
+}
+
+.animation-creator h1 {
+  font-family: Fredoka One;
+}
+
+.soundbar {
+    box-sizing: border-box;
+    background: #7d7e7d;
+    background: -moz-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%);
+    background: -webkit-linear-gradient(top, #7d7e7d 0%,#0e0e0e 100%);
+    background: linear-gradient(to bottom, #7d7e7d 0%,#0e0e0e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 );
+    border: 1px solid black;
+    width: 40vw;
+    padding: 0.5em;
+}
+
+.soundbar i {
+    background: rgb(82,82,84);
+    background: -moz-linear-gradient(0deg, rgba(82,82,84,1) 0%, rgba(248,248,255,1) 62%);
+    background: -webkit-linear-gradient(0deg, rgba(82,82,84,1) 0%, rgba(248,248,255,1) 62%);
+    background: linear-gradient(0deg, rgba(82,82,84,1) 0%, rgba(248,248,255,1) 62%);
+    padding: 0.5px;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#525254",endColorstr="#f8f8ff",GradientType=1);
+    margin: 0.25em;
+    border-bottom: 1px solid black;
+    font-size: 2em;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 5px 0px 0px #c1c1c1;
+    -webkit-box-shadow: 0px 5px 0px 0px #c1c1c1;
+    -moz-box-shadow: 0px 5px 0px 0px #c1c1c1;
+    box-shadow: 0px 5px 0px 0px #393f47;
+}
+
+.soundbar i:hover,
+.soundbar i:focus {
+    background: #e5e5e5;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    position: relative;
+    top: 2px;
+    margin-bottom: 0;
+    transition: color 1s;
+}
+
+.soundbar-active {
+    color: red;
+    transition: color 0s;
+}
+
+.animation-section-wrapper {
+    position: relative;
+}
+
+.animation-creator-wrapper {
+    border: 1px solid black;
+    box-sizing: border-box;
+    height: 40vh;
+    width: 40vw;
+    position: absolute;
+    float: left;
+}
+
+.drag-box {
+    height: 100%;
+    width: 40vw;
+    position: relative;
+}
+
+.hide-me {
+    opacity: 0;
+}
+
+.animation-code-display {
+    border: 1px solid black;
+    box-sizing: border-box;
+    position: absolute;
+    float: left;
+    left: 45vw;
+}
+
+.animation-code-display div {
+    position: relative;
+    left: 0;
+    width: 20vw;
+    height: 15vw;
+    margin: 2em;
+}
+
+.animation-code-display textarea {
+    left: 0;
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
+}
+
+.drag-area:not(body) {
+    background-color: blue;
+}

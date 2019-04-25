@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <head>
+
+    <title>animation creator.</title>
+
+    <link rel="stylesheet" href="animation-generation.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka+One">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://storage.googleapis.com/non-spec-apps/mio-icons/latest/outline.css">
+
+  </head>
+
+  <body class="animation-creator">
+
+
+                                             <h1>CSS Animation Generator!</h1>
+
+    <h2>This tool will enable you to create a 4-second animation sequence!</h2>
+      <h3>Instructions: Once you hit the record button, move the ball around to get the animation sequence you desire. Once the four seconds are up, press eject, and then you can copy the code. To see the last animation created, press rewind and then hit replay. Enjoy!</h3>
+
+      
+    <section class="animation-section-wrapper">
+
+        <div class="animation-creator-wrapper">
+
+            <div class="drag-box">
+                <div class="random-red-ball" draggable="true"></div>
+            </div>
+
+            <div class="soundbar">
+                <i class="material-icons" id="record"> fiber_manual_record </i>
+                <i class="material-icons" id="stop"> stop </i>
+                <i class="material-icons" id="eject"> eject </i>
+                <i class="material-icons" id="rewind"> fast_rewind </i>
+                <i class="material-icons" id="replay"> replay </i>
+            </div>        
+
+        </div>
+
+            <section class="animation-code-display">
+                <div class="animation-code-display">
+                <textarea class="animation-code-display" id="animation-textarea"></textarea>
+                </div>
+            </section>
+
+    </section>
+      
+      
+      <img class="ghost-image"></img>
+
+
+      <script type="text/javascript" src="animation-generation.js"></script>
+
+  </body>
+
+
+
+</html>
