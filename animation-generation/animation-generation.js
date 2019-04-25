@@ -88,6 +88,15 @@ function dragDrop(e){
 function dragStart(e){
     redBall.classList.add('hide-me');
     e.dataTransfer.setDragImage(ghostImage, 0, 0);
+    dragArea.addEventListener('dragleave', function(e){
+      if (e.type = "dragleave" && e.target == dragArea){
+        soundBarSelect(stopButton);
+        clearTimeout(sequenceEnd);
+        clearTimeout(dontDrop);
+        executed = true;
+        empty();
+      }
+    })
 }
 
 function dragEnd(e){
@@ -105,19 +114,12 @@ function dragEnd(e){
 function dragEnter(e){
     e.preventDefault();
     executed = false;
-    console.log(e.target.className + " dragenter");
+    console.log(e.target.className + " dragenter" + e.type);
 }
 
 function dragOver(e){
     e.preventDefault();
-    executed = false;
-    dragArea.addEventListener('mouseout', function(){
-    executed = true;
-    clearTimeout(sequenceEnd);
-    clearTimeout(dontDrop);
-    dragArea.style.backgroundColor = "blue";
-    soundBarSelect(stopButton);
-                               });
+    executed = false; 
 }
 
 //Prevents element from being dropped outside of the draggable area.
