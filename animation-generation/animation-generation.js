@@ -73,13 +73,12 @@ function dragDrop(e){
     if (!executed && recordButton.classList.contains('soundbar-active')){
         coordinates.mouse.top.unshift(e.clientY);
         coordinates.mouse.left.unshift(e.clientX);
-        soundBarSelect(stopButton);
         dragArea.append(redBall);
         redBall.style.left = ((coordinates.mouse.left[0]) - coordinates.parent.left) + "px";
         redBall.style.top = ((coordinates.mouse.top[0]) - coordinates.parent.top) + "px";
+        soundBarSelect(stopButton);
         executed = true;
         return executed;
-        console.log("done son");
     }
 }
 
@@ -120,6 +119,12 @@ function dragEnter(e){
 function dragOver(e){
     e.preventDefault();
     executed = false; 
+    dontDrop = setTimeout(function(){ 
+                if (!executed && recordButton.classList.contains('soundbar-active')){
+                    dragDrop(e);
+                    console.log("im the problem");
+                }
+                }, 4000);
 }
 
 //Prevents element from being dropped outside of the draggable area.
@@ -136,12 +141,6 @@ function record(e){
     executed = false;
     soundBarSelect(recordButton);
     redBall.setAttribute('draggable', true);
-    dontDrop = setTimeout(function(){ 
-                if (!executed && recordButton.classList.contains('soundbar-active')){
-                    dragDrop(e);
-                    console.log("im the problem");
-                }
-                }, 4000);
 }
 
 function stop(e){
